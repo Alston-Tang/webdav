@@ -8,6 +8,11 @@ services:
     container_name: webdav
     ports:
       - "80:80"
+    environment:
+      - USERNAME=$USERNAME
+      - PASSWORD=$PASSWORD
+      - ROOT_DIRECTORY=$ROOT_DIRECTORY
+      - RUN_AS=$RUN_AS
     volumes:
       - /mnt:/data
       - /etc/group:/etc/group:ro
