@@ -1,0 +1,16 @@
+version: "3"
+services:
+  webdav:
+    image: thm64/webdav:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: webdav
+    ports:
+      - "80:80"
+    volumes:
+      - /mnt:/data
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/shadow:/etc/shadow:ro
+    restart: unless-stopped
