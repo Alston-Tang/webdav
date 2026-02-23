@@ -5,7 +5,6 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: webdav
     ports:
       - "${PORT:-80}:80"
     environment:
