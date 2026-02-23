@@ -13,7 +13,7 @@ services:
       - ROOT_DIRECTORY=$ROOT_DIRECTORY
       - RUN_AS=$RUN_AS
     volumes:
-      - /mnt:/data
+      - "${HOST_DATA_PATH:-/mnt}:/data"
       - /etc/group:/etc/group:ro
       - /etc/passwd:/etc/passwd:ro
       - /etc/shadow:/etc/shadow:ro
