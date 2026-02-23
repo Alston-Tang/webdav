@@ -5,8 +5,9 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    container_name: webdav
     ports:
-      - "80:80"
+      - "${PORT:-80}:80"
     environment:
       - USERNAME=$USERNAME
       - PASSWORD=$PASSWORD
